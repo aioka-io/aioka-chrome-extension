@@ -1,0 +1,305 @@
+/* AIOKA floating panel — scoped by #aioka-panel-root. Uses `all: initial` on
+   the root to isolate from TradingView's global styles. */
+
+#aioka-panel-root {
+  all: initial;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+#aioka-panel-root * {
+  box-sizing: border-box;
+}
+
+.aioka-panel {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 2147483647;
+  width: 280px;
+  background: #0D0D0F;
+  color: #E5E7EB;
+  border: 1px solid rgba(124, 58, 237, 0.35);
+  border-radius: 10px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(124, 58, 237, 0.08);
+  font-size: 13px;
+  line-height: 1.3;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  user-select: none;
+}
+
+.aioka-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 10px 12px;
+  background: linear-gradient(180deg, #141418 0%, #0D0D0F 100%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  cursor: grab;
+}
+
+.aioka-header:active {
+  cursor: grabbing;
+}
+
+.aioka-title {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: #F3F4F6;
+}
+
+.aioka-ghost {
+  font-size: 14px;
+  filter: drop-shadow(0 0 6px rgba(124, 58, 237, 0.6));
+}
+
+.aioka-brand {
+  font-size: 12px;
+}
+
+.aioka-status {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 10px;
+  color: #9CA3AF;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-left: auto;
+  margin-right: 4px;
+}
+
+.aioka-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #22C55E;
+  box-shadow: 0 0 6px rgba(34, 197, 94, 0.6);
+  animation: aioka-pulse 2s ease-in-out infinite;
+}
+
+@keyframes aioka-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+.aioka-btn-icon {
+  background: transparent;
+  border: none;
+  color: #9CA3AF;
+  font-size: 16px;
+  font-weight: 700;
+  width: 22px;
+  height: 22px;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  line-height: 1;
+}
+
+.aioka-btn-icon:hover {
+  background: rgba(255, 255, 255, 0.06);
+  color: #F3F4F6;
+}
+
+.aioka-body {
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.aioka-verdict-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.aioka-verdict {
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: #F3F4F6;
+}
+
+.aioka-verdict-strong-buy,
+.aioka-verdict-buy,
+.aioka-verdict-accumulate {
+  color: #22C55E;
+}
+
+.aioka-verdict-reduce,
+.aioka-verdict-sell,
+.aioka-verdict-strong-sell {
+  color: #EF4444;
+}
+
+.aioka-verdict-hold,
+.aioka-verdict-pending {
+  color: #9CA3AF;
+}
+
+.aioka-conf {
+  font-size: 12px;
+  color: #9CA3AF;
+  font-variant-numeric: tabular-nums;
+}
+
+.aioka-metrics {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding-top: 8px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.aioka-metric {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  font-size: 12px;
+}
+
+.aioka-metric-label {
+  color: #9CA3AF;
+  text-transform: uppercase;
+  font-size: 10px;
+  letter-spacing: 0.1em;
+}
+
+.aioka-metric-value {
+  color: #E5E7EB;
+  font-variant-numeric: tabular-nums;
+  font-weight: 500;
+}
+
+.aioka-ghost-pill {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  background: rgba(156, 163, 175, 0.12);
+  color: #9CA3AF;
+}
+
+.aioka-ghost-in-position {
+  background: rgba(124, 58, 237, 0.18);
+  color: #C4B5FD;
+}
+
+.aioka-ghost-ready {
+  background: rgba(34, 197, 94, 0.15);
+  color: #86EFAC;
+}
+
+.aioka-ghost-waiting {
+  background: rgba(156, 163, 175, 0.12);
+  color: #D1D5DB;
+}
+
+.aioka-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 8px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  font-size: 10px;
+  color: #6B7280;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.aioka-updated-stale {
+  color: #F59E0B;
+}
+
+.aioka-refresh {
+  background: transparent;
+  border: none;
+  color: #9CA3AF;
+  cursor: pointer;
+  font-size: 14px;
+  padding: 2px 4px;
+  border-radius: 4px;
+  line-height: 1;
+}
+
+.aioka-refresh:hover {
+  color: #C4B5FD;
+  background: rgba(124, 58, 237, 0.1);
+}
+
+/* Setup prompt (no API key / invalid key) */
+
+.aioka-setup {
+  padding: 16px 12px;
+  text-align: center;
+}
+
+.aioka-setup-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: #F3F4F6;
+  margin-bottom: 6px;
+}
+
+.aioka-setup-body {
+  font-size: 12px;
+  color: #9CA3AF;
+  margin-bottom: 12px;
+  line-height: 1.45;
+}
+
+.aioka-btn-primary {
+  background: #7C3AED;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 14px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  width: 100%;
+}
+
+.aioka-btn-primary:hover {
+  background: #8B5CF6;
+}
+
+/* Minimized floating button */
+
+.aioka-minimized {
+  display: none;
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 2147483647;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #0D0D0F;
+  border: 1px solid rgba(124, 58, 237, 0.5);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5), 0 0 16px rgba(124, 58, 237, 0.3);
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+}
+
+.aioka-minimized:hover {
+  border-color: rgba(124, 58, 237, 0.8);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5), 0 0 24px rgba(124, 58, 237, 0.5);
+}

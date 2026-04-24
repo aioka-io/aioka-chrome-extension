@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>AIOKA Settings</title>
+  <link rel="stylesheet" href="settings.css">
+</head>
+<body>
+  <main class="page">
+    <header class="hero">
+      <div class="brand">
+        <span class="ghost">&#128123;</span>
+        <h1>A I O K A</h1>
+      </div>
+      <p class="tagline">AI Crypto Signals on your TradingView chart.</p>
+    </header>
+
+    <section class="card">
+      <h2>API Key</h2>
+      <p class="help">
+        Paste your free AIOKA API key. It is stored locally in your browser
+        and never sent anywhere except <code>api.aioka.io</code>.
+      </p>
+
+      <label for="api-key">AIOKA API Key</label>
+      <input
+        id="api-key"
+        type="password"
+        autocomplete="off"
+        spellcheck="false"
+        placeholder="aik_free_..."
+      >
+      <div class="row">
+        <label class="checkbox">
+          <input id="show-key" type="checkbox"> Show key
+        </label>
+      </div>
+
+      <div class="actions">
+        <button id="save-btn" class="btn-primary" type="button">Save</button>
+        <button id="test-btn" class="btn-secondary" type="button">Test Connection</button>
+      </div>
+
+      <div id="status" class="status"></div>
+    </section>
+
+    <section class="card">
+      <h2>Tier</h2>
+      <div id="tier-box" class="tier-box">
+        <span class="tier-label">Current tier</span>
+        <span id="tier-value" class="tier-value">—</span>
+      </div>
+      <p class="help">
+        Free tier grants 60 API calls/day. Upgrade for higher quotas, webhooks,
+        backtesting, and more.
+      </p>
+      <div class="links">
+        <a href="https://api.aioka.io/v1/keys/generate" target="_blank" rel="noopener">Get Free Key</a>
+        <a href="https://aioka.io/pricing" target="_blank" rel="noopener">Upgrade</a>
+        <a href="https://docs.aioka.io" target="_blank" rel="noopener">Docs</a>
+      </div>
+    </section>
+
+    <footer class="ftr">
+      <span>AIOKA Chrome Extension v1.0.0</span>
+      <a href="https://aioka.io" target="_blank" rel="noopener">aioka.io</a>
+    </footer>
+  </main>
+  <script src="settings.js"></script>
+</body>
+</html>

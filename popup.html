@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>AIOKA</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="wrap">
+    <header class="hdr">
+      <div class="brand">
+        <span class="ghost">&#128123;</span>
+        <span class="name">AIOKA</span>
+      </div>
+      <div class="live" id="live-indicator">
+        <span class="dot"></span>
+        <span>LIVE</span>
+      </div>
+    </header>
+
+    <section class="verdict-section">
+      <div class="verdict" id="verdict">—</div>
+      <div class="confidence" id="confidence">Confidence —</div>
+    </section>
+
+    <section class="metrics">
+      <div class="metric">
+        <span class="label">BTC</span>
+        <span class="value" id="btc">—</span>
+      </div>
+      <div class="metric">
+        <span class="label">Regime</span>
+        <span class="value" id="regime">—</span>
+      </div>
+      <div class="metric">
+        <span class="label">RSI</span>
+        <span class="value" id="rsi">—</span>
+      </div>
+      <div class="metric">
+        <span class="label">Dark Pool</span>
+        <span class="value" id="darkpool">—</span>
+      </div>
+      <div class="metric">
+        <span class="label">Ghost</span>
+        <span class="value" id="ghost">—</span>
+      </div>
+    </section>
+
+    <div class="updated" id="updated">Waiting…</div>
+
+    <footer class="ftr">
+      <button id="refresh-btn" type="button">Refresh</button>
+      <button id="settings-btn" type="button">Settings</button>
+      <a href="https://aioka.io" target="_blank" rel="noopener">aioka.io</a>
+    </footer>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>
