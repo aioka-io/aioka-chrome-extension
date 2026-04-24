@@ -50,10 +50,6 @@ async function save() {
     setStatus("Please enter an API key.", "err");
     return;
   }
-  if (!/^aik_[a-z0-9]+_[A-Za-z0-9]+$/.test(key)) {
-    setStatus("Key format looks invalid. Expected aik_{tier}_{token}.", "err");
-    return;
-  }
   try {
     await chrome.storage.local.set({ apiKey: key, lastError: null, lastErrorAt: null });
     setTierDisplay(parseTierFromKey(key));
