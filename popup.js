@@ -71,6 +71,8 @@ function render(state) {
 
   document.getElementById("btc").textContent =
     signal && typeof signal.btc_price === "number" ? fmtPrice(signal.btc_price) : "—";
+  document.getElementById("ema200").textContent =
+    signal && typeof signal.ema_200 === "number" ? fmtPrice(signal.ema_200) : "—";
   document.getElementById("regime").textContent =
     (signal && signal.regime ? signal.regime.replace(/_/g, " ") : "—");
   document.getElementById("rsi").textContent =

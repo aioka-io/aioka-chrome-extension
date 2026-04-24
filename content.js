@@ -71,6 +71,10 @@
               <span class="aioka-metric-value" id="aioka-btc">—</span>
             </div>
             <div class="aioka-metric">
+              <span class="aioka-metric-label">EMA 200</span>
+              <span class="aioka-metric-value" id="aioka-ema200">—</span>
+            </div>
+            <div class="aioka-metric">
               <span class="aioka-metric-label">Regime</span>
               <span class="aioka-metric-value" id="aioka-regime">—</span>
             </div>
@@ -136,6 +140,7 @@
     const rsi = signal && typeof signal.rsi === "number" ? signal.rsi.toFixed(1) : "—";
     const darkPool = signal && typeof signal.dark_pool === "number" ? `${Math.round(signal.dark_pool)}/100` : "—";
     const btcPrice = signal && typeof signal.btc_price === "number" ? fmtPrice(signal.btc_price) : "—";
+    const ema200 = signal && typeof signal.ema_200 === "number" ? fmtPrice(signal.ema_200) : "—";
     const ghostStatus = (signal && signal.ghost_status) || "UNKNOWN";
 
     const verdictEl = document.getElementById("aioka-verdict");
@@ -144,6 +149,7 @@
 
     document.getElementById("aioka-confidence").textContent = confidence;
     document.getElementById("aioka-btc").textContent = btcPrice;
+    document.getElementById("aioka-ema200").textContent = ema200;
     document.getElementById("aioka-regime").textContent = regime.replace(/_/g, " ");
     document.getElementById("aioka-rsi").textContent = rsi;
     document.getElementById("aioka-darkpool").textContent = darkPool;
